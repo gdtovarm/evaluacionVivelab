@@ -48,4 +48,10 @@ describe("item", function(){
 		item.update_quality();
 		expect(item.quality).toEqual(50);
 	});
+
+	it("should never change its quality if its Sulfuras", function(){
+		item = new Item("Sulfuras",0,80);
+		item.update_quality();
+		expect(item.quality).toEqual(80);
+	});
 });
