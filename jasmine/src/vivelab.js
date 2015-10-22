@@ -4,6 +4,15 @@ function Item(name, sell_in, quality) {
   this.quality = quality;
 }
 
+var items = []
+
+items.push(new Item('+5 Dexterity Vest', 10, 20));
+items.push(new Item('Aged Brie', 2, 0));
+items.push(new Item('Elixir of the Mongoose', 5, 7));
+items.push(new Item('Sulfuras, Hand of Ragnaros', 0, 80));
+items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20));
+items.push(new Item('Conjured Mana Cake', 3, 6));
+
 Item.prototype.update_quality = function(){
   if (this.is("Sulfuras"));
   else  {
@@ -42,4 +51,8 @@ Item.prototype.backStageValue = function(){
 
 Item.prototype.valuingItem = function(){
   return this.is ("Aged Brie") || this.is("Backstage passes");
+}
+
+function update_quality(){
+  for (var i = 0; i < items.length; i++) item[i].update_quality;
 }
