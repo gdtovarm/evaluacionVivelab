@@ -4,6 +4,8 @@ function Item(name, sell_in, quality) {
   this.quality = quality;
 }
 
+
+/*
 var items = []
 
 items.push(new Item('+5 Dexterity Vest', 10, 20));
@@ -60,3 +62,4 @@ function update_quality() {
     }
   }
 }
+*/
