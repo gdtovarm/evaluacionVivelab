@@ -32,4 +32,10 @@ describe("item", function(){
 		createAndUpdateItem(0,0);
 		expect(item.quality).toEqual(0);
 	});
+
+	it("should increase its quality if is an Aged Brie", function(){
+		item = new Item("Aged Brie",5,0);
+		item.update_quality();
+		expect(item.quality).toEqual(6);
+	});
 });
