@@ -54,4 +54,22 @@ describe("item", function(){
 		item.update_quality();
 		expect(item.quality).toEqual(80);
 	});
+
+	it("should never change its quality if its Sulfuras", function(){
+		item = new Item("Sulfuras",0,80);
+		item.update_quality();
+		expect(item.quality).toEqual(80);
+	});
+
+	it("should increase its quality if it's Backstage Passes, double if sellIn time is less or equal than 10, and triple if sellIn time is less or equal than 5", function(){
+		item = new Item("Backstage Passes",30,0);
+		item.update_quality();
+		expect(item.quality).toEqual(1);
+		item = new Item("Backstage Passes",10,0);
+		item.update_quality();
+		expect(item.quality).toEqual(2);
+		item = new Item("Backstage Passes",5,0);
+		item.update_quality();
+		expect(item.quality).toEqual(3);
+	});
 });
