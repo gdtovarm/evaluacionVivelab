@@ -20,7 +20,9 @@ Item.prototype.increaseQuality = function(){
 }
 
 Item.prototype.decreaseQuality = function(){
-  (this.sell_in > 0) ? this.quality -= 1 : this.quality -= 2;
+  var decrement = 1;
+  if(this.is("Conjured")) decrement = 2;
+  (this.sell_in > 0) ? this.quality -= decrement : this.quality -= decrement * 2;
 }
 
 Item.prototype.capItemQuality = function(){
@@ -41,6 +43,8 @@ Item.prototype.backStageValue = function(){
 Item.prototype.valuingItem = function(){
   return this.is ("Aged Brie") || this.is("Backstage passes");
 }
+
+
 /*
 var items = []
 
