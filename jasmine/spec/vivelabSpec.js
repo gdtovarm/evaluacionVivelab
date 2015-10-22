@@ -8,7 +8,7 @@ describe("item", function(){
 
 	it("should lose quality and reduce sellIn time when a day passed", function(){
 		var item = new Item("test Item",1,1);
-		item.updateQuality();
+		item.update_quality();
 		expect(item.sell_in).toEqual(0);
 		expect(item.quality).toEqual(0);
 	});
