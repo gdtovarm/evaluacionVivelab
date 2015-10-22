@@ -4,6 +4,10 @@ function Item(name, sell_in, quality) {
   this.quality = quality;
 }
 
+Item.prototype.update_quality = function(){
+  this.sell_in -= 1;
+  this.quality -= 1;
+}
 
 /*
 var items = []
