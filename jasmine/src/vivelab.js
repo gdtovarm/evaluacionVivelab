@@ -5,7 +5,8 @@ function Item(name, sell_in, quality) {
 }
 
 Item.prototype.update_quality = function(){
-  (this.sell_in > 0) ? this.quality -= 1 : this.quality -= 2
+  if (this.name == "Aged Brie") this.quality += 1;
+  else (this.sell_in > 0) ? this.quality -= 1 : this.quality -= 2
   if(this.quality < 0) this.quality = 0;
   this.sell_in -= 1;
 }
