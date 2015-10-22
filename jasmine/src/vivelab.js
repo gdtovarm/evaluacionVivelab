@@ -5,9 +5,9 @@ function Item(name, sell_in, quality) {
 }
 
 Item.prototype.update_quality = function(){
-  if (this.name.indexOf("Sulfuras") < 0){
-    if (this.name == "Aged Brie") this.increaseQuality();
-    else this.decreaseQuality();
+  if (this.not("Sulfuras")){
+    if (this.not ("Aged Brie")) this.decreaseQuality();
+    else this.increaseQuality();
     this.capItemQuality();
   }
   this.sell_in -= 1;
@@ -24,6 +24,10 @@ Item.prototype.decreaseQuality = function(){
 Item.prototype.capItemQuality = function(){
   if(this.quality < 0) this.quality = 0;
   else if(this.quality > 50) this.quality = 50;
+}
+
+Item.prototype.not = function(name){
+  return this.name.indexOf(name) < 0;
 }
 /*
 var items = []
