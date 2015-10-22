@@ -5,6 +5,10 @@ describe("item", function(){
 		return new Item("test Item",sell_in,quality);
 	}
 
+	function createAgedBrie(sell_in,quality){
+		return new Item("Aged Brie",sell_in,quality);
+	}
+
 	function createAndUpdateItem(sell_in,quality){
 		item = createItem(sell_in,quality);
 		item.update_quality();
@@ -34,13 +38,13 @@ describe("item", function(){
 	});
 
 	it("should increase its quality if is an Aged Brie", function(){
-		item = new Item("Aged Brie",5,5);
+		item = createAgedBrie(5,5);
 		item.update_quality();
 		expect(item.quality).toEqual(6);
 	});
 
 	it("should never have a quality over 50", function(){
-		item = new Item("Aged Brie",5,50);
+		item = createAgedBrie(5,50);
 		item.update_quality();
 		expect(item.quality).toEqual(50);
 	});
