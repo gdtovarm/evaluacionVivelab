@@ -1,6 +1,6 @@
 describe("item", function(){
-	function createItem(quality,sell_in){
-		return new Item("test Item",quality,sell_in);
+	function createItem(sell_in,quality){
+		return new Item("test Item",sell_in,quality);
 	}
 
 	it("should have set name, sellIn and quality values", function(){
