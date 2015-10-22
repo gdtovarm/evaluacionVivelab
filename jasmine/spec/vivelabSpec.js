@@ -22,4 +22,10 @@ describe("item", function(){
 		item.update_quality();
 		expect(item.quality).toEqual(0);
 	});
+
+	it("should never have less than 0 quality", function(){
+		var item = createItem(0,0);
+		item.update_quality();
+		expect(item.quality).toEqual(0);
+	});
 });
