@@ -16,4 +16,10 @@ describe("item", function(){
 		expect(item.sell_in).toEqual(0);
 		expect(item.quality).toEqual(0);
 	});
+
+	it("should lose quality at twice the speed when sellIn time is 0", function(){
+		var item = createItem(0,2);
+		item.update_quality();
+		expect(item.quality).toEqual(0);
+	});
 });
