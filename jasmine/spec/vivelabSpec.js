@@ -72,4 +72,13 @@ describe("item", function(){
 		item.update_quality();
 		expect(item.quality).toEqual(3);
 	});
+
+	it("should lose double the quality if is a conjured item", function(){
+		item = new Item("Conjured Item",4,6);
+		item2 = new Item("Conjured Item",0,6);
+		item.update_quality();
+		item2.update_quality();
+		expect(item.quality).toEqual(4);
+		expect(item2.quality).toEqual(2);
+	});
 });
