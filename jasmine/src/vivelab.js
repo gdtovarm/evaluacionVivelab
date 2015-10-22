@@ -5,9 +5,11 @@ function Item(name, sell_in, quality) {
 }
 
 Item.prototype.update_quality = function(){
-  if (this.name == "Aged Brie") this.increaseQuality();
-  else this.decreaseQuality();
-  this.capItemQuality();
+  if (this.name.indexOf("Sulfuras") < 0){
+    if (this.name == "Aged Brie") this.increaseQuality();
+    else this.decreaseQuality();
+    this.capItemQuality();
+  }
   this.sell_in -= 1;
 }
 
