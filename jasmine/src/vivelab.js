@@ -8,6 +8,7 @@ Item.prototype.update_quality = function(){
   if (this.name == "Aged Brie") this.quality += 1;
   else (this.sell_in > 0) ? this.quality -= 1 : this.quality -= 2
   if(this.quality < 0) this.quality = 0;
+  else if(this.quality > 50) this.quality = 50;
   this.sell_in -= 1;
 }
 
