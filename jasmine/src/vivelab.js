@@ -6,7 +6,7 @@ function Item(name, sell_in, quality) {
 
 Item.prototype.update_quality = function(){
   if (this.not("Sulfuras")){
-    if (this.not ("Aged Brie")) this.decreaseQuality();
+    if (this.not ("Aged Brie") || this.not("Backstage passes")) this.decreaseQuality();
     else this.increaseQuality();
     this.capItemQuality();
   }
@@ -29,6 +29,7 @@ Item.prototype.capItemQuality = function(){
 Item.prototype.not = function(name){
   return this.name.indexOf(name) < 0;
 }
+
 /*
 var items = []
 
