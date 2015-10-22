@@ -38,4 +38,10 @@ describe("item", function(){
 		item.update_quality();
 		expect(item.quality).toEqual(6);
 	});
+
+	it("should never have a quality over 50", function(){
+		item = new Item("Aged Brie",5,50);
+		item.update_quality();
+		expect(item.quality).toEqual(50);
+	});
 });
